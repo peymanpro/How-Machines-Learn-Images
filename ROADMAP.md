@@ -6,15 +6,15 @@
 - [x] 0.1 Project initialization
 - [x] 0.2 Python environment
 - [x] 0.3 Dependency policy
-- [ ] 0.4 Test framework
-- [ ] 0.5 Lint / format / type checking
-- [ ] 0.6 Git configuration
-- [ ] 0.7 README
-- [ ] 0.8 ROADMAP
-- [ ] 0.9 PROJECT-STATE
-- [ ] 0.10 HANDOFF
+- [x] 0.4 Test framework
+- [x] 0.5 Lint / format / type checking
+- [x] 0.6 Git configuration
+- [x] 0.7 README
+- [x] 0.8 ROADMAP
+- [x] 0.9 PROJECT-STATE
+- [x] 0.10 HANDOFF
 - [ ] 0.11 Project contracts
-- [ ] 0.12 First project test
+- [x] 0.12 First project test
 
 ### Phase 1 — What Is an Image?
 - [ ] 1.1 Pixel

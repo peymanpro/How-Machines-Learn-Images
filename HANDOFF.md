@@ -3,14 +3,14 @@
 Project: How-Machines-Learn-Images
 Milestone: M1 — Understand Images
 Phase: Phase 0 — Foundation
-Current task: 0.8 — ROADMAP
+Current task: 0.11 — Project contracts
 
-Latest commit: b5e382e
+Latest commit: ea0ced0
 Tests: 1 passed
 Quality checks: Ruff passed, Mypy passed
-Working tree: clean
+Working tree: clean before current changes
 
 Next:
-Finalize and verify ROADMAP.md.
+Define and commit the project contracts.
 
 Repository is the source of truth.
