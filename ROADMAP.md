@@ -13,7 +13,7 @@
 - [x] 0.8 ROADMAP
 - [x] 0.9 PROJECT-STATE
 - [x] 0.10 HANDOFF
-- [ ] 0.11 Project contracts
+- [x] 0.11 Project contracts
 - [x] 0.12 First project test
 
 ### Phase 1 — What Is an Image?
