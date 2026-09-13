@@ -24,7 +24,7 @@
 - [x] 1.5 Image shape
 - [x] 1.6 Image as matrix
 - [x] 1.7 Image as tensor
-- [ ] 1.8 Loading images
+- [x] 1.8 Loading images
 - [ ] 1.9 Saving images
 - [ ] 1.10 Normalization
 - [ ] 1.11 Resizing

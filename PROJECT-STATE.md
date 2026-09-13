@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 1 — What Is an Image?
-Current task: 1.8 — Loading images
+Current task: 1.9 — Saving images
 
 Completed:
 - Phase 0 — Foundation completed
@@ -13,6 +13,9 @@ Completed:
 - Phase 1.5 — Image shape completed
 - Phase 1.6 — Image as matrix completed
 - Phase 1.7 — Image as tensor completed
+- Phase 1.8 — Loading images completed
+- Image loading implemented and tested
+- 42 tests passing
 - Image tensor validation implemented
 - 40 tests passing
 - 35 tests passing
@@ -29,7 +32,7 @@ Completed:
 - Ruff check passed
 - Mypy passed
 
-Latest commit: b4a9276
+Latest commit: 8429bd3
 Working tree: clean
 
 Known issues:
