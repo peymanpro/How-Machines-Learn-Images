@@ -30,7 +30,7 @@
 - [x] 1.11 Resizing
 - [x] 1.12 Basic visualization
 - [x] 1.13 Pixel inspection
-- [ ] 1.14 Channel visualization
+- [x] 1.14 Channel visualization
 - [ ] 1.15 Histogram
 - [ ] 1.16 Tests
 
