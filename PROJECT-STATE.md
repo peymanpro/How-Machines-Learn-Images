@@ -2,10 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 0 — Foundation
-Current task: 0.4 — Test framework
-
-Latest commit: 5ebcd8d
-Working tree: clean before current task
+Current task: 0.5 — Lint / format / type checking
 
 Completed:
 - Repository initialized
@@ -17,11 +14,19 @@ Completed:
 - pytest 9.1.1 installed
 - requirements.txt created
 - .gitignore created
-- Initial dependency commit created
+- README.md created
+- ROADMAP.md created
+- PROJECT-STATE.md created
+- HANDOFF.md created
+- pytest environment test created
+- pytest: 1 passed
+
+Latest commit: 248ef0c
+Working tree: clean
 
 Known issues:
-- PyPI candidate resolution failed through the default index; Tencent PyPI mirror works.
-- Package installation currently uses the mirror manually.
+- Default PyPI candidate resolution failed in this environment.
+- Tencent PyPI mirror successfully installs required packages.
 
 Next:
-- Establish test framework and first project test.
+- Add development quality tooling.
