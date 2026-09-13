@@ -18,3 +18,15 @@ def test_pixel_accepts_boundaries(value: int) -> None:
 def test_pixel_rejects_invalid_value(value: int) -> None:
     with pytest.raises(ValueError):
         Pixel(value)
+
+
+@pytest.mark.parametrize(
+    ("value", "expected"),
+    [
+        (0, 0.0),
+        (128, 128 / 255),
+        (255, 1.0),
+    ],
+)
+def test_pixel_intensity(value: int, expected: float) -> None:
+    assert Pixel(value).intensity == pytest.approx(expected)
