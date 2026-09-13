@@ -54,3 +54,16 @@ class Vector:
 
         difference = self.values - other.values
         return float(np.sqrt(np.sum(difference * difference)))
+
+    def cosine_similarity(self, other: Vector) -> float:
+        """Return the cosine similarity with another vector."""
+        if self.dimension != other.dimension:
+            raise ValueError("Vectors must have the same dimension.")
+
+        first_norm = self.norm()
+        second_norm = other.norm()
+
+        if first_norm == 0.0 or second_norm == 0.0:
+            raise ValueError("Cosine similarity is undefined for a zero vector.")
+
+        return self.dot(other) / (first_norm * second_norm)
