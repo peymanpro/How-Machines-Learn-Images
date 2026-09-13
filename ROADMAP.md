@@ -28,7 +28,7 @@
 - [x] 1.9 Saving images
 - [x] 1.10 Normalization
 - [x] 1.11 Resizing
-- [ ] 1.12 Basic visualization
+- [x] 1.12 Basic visualization
 - [ ] 1.13 Pixel inspection
 - [ ] 1.14 Channel visualization
 - [ ] 1.15 Histogram
