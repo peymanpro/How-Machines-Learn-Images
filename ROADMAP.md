@@ -19,7 +19,7 @@
 ### Phase 1 — What Is an Image?
 - [x] 1.1 Pixel
 - [x] 1.2 Intensity
-- [ ] 1.3 Grayscale
+- [x] 1.3 Grayscale
 - [ ] 1.4 RGB
 - [ ] 1.5 Image shape
 - [ ] 1.6 Image as matrix
