@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 1 — What Is an Image?
-Current task: 1.5 — Image shape
+Current task: 1.6 — Image as matrix
 
 Completed:
 - Phase 0 — Foundation completed
@@ -10,6 +10,9 @@ Completed:
 - Phase 1.2 — Intensity completed
 - Phase 1.3 — Grayscale completed
 - Phase 1.4 — RGB completed
+- Phase 1.5 — Image shape completed
+- Image shape validation implemented
+- 29 tests passing
 - RGB pixel representation implemented
 - 21 tests passing
 - Grayscale pixel representation implemented
@@ -21,7 +24,7 @@ Completed:
 - Ruff check passed
 - Mypy passed
 
-Latest commit: f8f21d8
+Latest commit: b6ddb9d
 Working tree: clean
 
 Known issues:

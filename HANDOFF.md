@@ -3,14 +3,14 @@
 Project: How-Machines-Learn-Images
 Milestone: M1 — Understand Images
 Phase: Phase 1 — What Is an Image?
-Current task: 1.5 — Image shape
+Current task: 1.6 — Image as matrix
 
-Latest commit: f8f21d8
-Tests: 21 passed
+Latest commit: b6ddb9d
+Tests: 29 passed
 Quality checks: Ruff passed, Mypy passed
 Working tree: clean
 
 Next:
-Implement Phase 1.5 — Image shape.
+Implement Phase 1.6 — Image as matrix.
 
 Repository is the source of truth.

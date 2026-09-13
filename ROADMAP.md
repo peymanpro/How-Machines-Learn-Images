@@ -21,7 +21,7 @@
 - [x] 1.2 Intensity
 - [x] 1.3 Grayscale
 - [x] 1.4 RGB
-- [ ] 1.5 Image shape
+- [x] 1.5 Image shape
 - [ ] 1.6 Image as matrix
 - [ ] 1.7 Image as tensor
 - [ ] 1.8 Loading images
