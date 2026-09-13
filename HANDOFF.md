@@ -3,13 +3,14 @@
 Project: How-Machines-Learn-Images
 Milestone: M1 — Understand Images
 Phase: Phase 0 — Foundation
-Current task: 0.5 — Lint / format / type checking
+Current task: 0.6 — Git configuration
 
-Latest commit: 248ef0c
+Latest commit: 7e9467f
 Tests: 1 passed
+Quality checks: Ruff passed, Mypy passed
 Working tree: clean
 
 Next:
-Add development quality tooling and verify it.
+Configure repository Git settings, then continue Phase 0.
 
 Repository is the source of truth.
