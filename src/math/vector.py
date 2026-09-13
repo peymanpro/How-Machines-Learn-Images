@@ -31,7 +31,14 @@ class Vector:
 
     @property
     def magnitude(self) -> float:
-        return float(np.sqrt(np.sum(self.values * self.values)))
+        return self.norm()
+
+    def norm(self, order: float = 2.0) -> float:
+        """Return the vector p-norm for a finite p >= 1."""
+        if not np.isfinite(order) or order < 1:
+            raise ValueError("Norm order must be finite and at least 1.")
+
+        return float(np.sum(np.abs(self.values) ** order) ** (1.0 / order))
 
     def dot(self, other: Vector) -> float:
         """Return the dot product with another vector."""
@@ -39,3 +46,11 @@ class Vector:
             raise ValueError("Vectors must have the same dimension.")
 
         return float(np.sum(self.values * other.values))
+
+    def distance_to(self, other: Vector) -> float:
+        """Return the Euclidean distance to another vector."""
+        if self.dimension != other.dimension:
+            raise ValueError("Vectors must have the same dimension.")
+
+        difference = self.values - other.values
+        return float(np.sqrt(np.sum(difference * difference)))
