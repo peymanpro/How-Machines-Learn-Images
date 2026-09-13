@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 2 — Mathematics Behind Seeing Patterns
-Current task: 2.4 — Matrix multiplication
+Current task: 2.5
 
 Completed:
 - Phase 0 — Foundation completed
@@ -25,6 +25,7 @@ Completed:
 - Phase 2.1 — Vectors completed
 - Phase 2.2 — Dot product completed
 - Phase 2.3 — Matrices completed
+- Phase 2.4 — Matrix multiplication completed
 - Image normalization implemented and tested
 - 115 tests passing
 - Image saving and validation implemented
