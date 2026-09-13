@@ -40,6 +40,57 @@ def test_matrix_supports_integer_values() -> None:
     assert matrix.element(1, 0) == 3.0
 
 
+def test_matrix_multiplication() -> None:
+    first = Matrix(
+        np.array(
+            [
+                [1.0, 2.0, 3.0],
+                [4.0, 5.0, 6.0],
+            ]
+        )
+    )
+    second = Matrix(
+        np.array(
+            [
+                [7.0, 8.0],
+                [9.0, 10.0],
+                [11.0, 12.0],
+            ]
+        )
+    )
+
+    result = first.multiply(second)
+
+    assert result.shape == (2, 2)
+    assert np.array_equal(
+        result.values,
+        np.array(
+            [
+                [58.0, 64.0],
+                [139.0, 154.0],
+            ]
+        ),
+    )
+
+
+def test_matrix_multiplication_returns_matrix() -> None:
+    first = Matrix(np.array([[1.0, 2.0]]))
+    second = Matrix(np.array([[3.0], [4.0]]))
+
+    result = first.multiply(second)
+
+    assert isinstance(result, Matrix)
+    assert result.element(0, 0) == 11.0
+
+
+def test_matrix_multiplication_rejects_incompatible_dimensions() -> None:
+    first = Matrix(np.zeros((2, 3)))
+    second = Matrix(np.zeros((2, 2)))
+
+    with pytest.raises(ValueError, match="incompatible"):
+        first.multiply(second)
+
+
 def test_matrix_rejects_non_matrix_array() -> None:
     with pytest.raises(ValueError, match="2D"):
         Matrix(np.zeros(3))

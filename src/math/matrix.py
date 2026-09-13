@@ -42,3 +42,13 @@ class Matrix:
             raise IndexError("Matrix column is out of bounds.")
 
         return float(self.values[row, column])
+
+    def multiply(self, other: Matrix) -> Matrix:
+        """Return the matrix product with another matrix."""
+        if self.columns != other.rows:
+            raise ValueError(
+                "Matrix dimensions are incompatible for multiplication."
+            )
+
+        result = self.values @ other.values
+        return Matrix(np.asarray(result))
