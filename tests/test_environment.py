@@ -1,4 +1,4 @@
-﻿def test_environment_is_ready() -> None:
+def test_environment_is_ready() -> None:
     import numpy
     import PIL
 
