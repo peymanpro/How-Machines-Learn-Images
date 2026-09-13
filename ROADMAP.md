@@ -37,6 +37,7 @@
 ### Phase 2 — Mathematics Behind Seeing Patterns
 - [x] 2.1 Vectors
 - [x] 2.2 Dot product
+- [x] 2.3 Matrices
 
 ### Phase 3 — Convolution From Scratch
 - [ ] 3.1–3.15
