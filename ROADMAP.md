@@ -31,8 +31,8 @@
 - [x] 1.12 Basic visualization
 - [x] 1.13 Pixel inspection
 - [x] 1.14 Channel visualization
-- [ ] 1.15 Histogram
-- [ ] 1.16 Tests
+- [x] 1.15 Histogram
+- [x] 1.16 Tests
 
 ### Phase 2 — Mathematics Behind Seeing Patterns
 - [ ] 2.1–2.16

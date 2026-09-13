@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 1 — What Is an Image?
-Current task: 1.15 — Histogram
+Current task: Phase 1 complete — awaiting Phase 2
 
 Completed:
 - Phase 0 — Foundation completed
@@ -20,8 +20,10 @@ Completed:
 - Phase 1.12 — Basic visualization completed
 - Phase 1.13 — Pixel inspection completed
 - Phase 1.14 — Channel visualization completed
+- Phase 1.15 — Histogram completed
+- Phase 1.16 — Tests completed
 - Image normalization implemented and tested
-- 98 tests passing
+- 108 tests passing
 - Image saving and validation implemented
 - 51 tests passing
 - Image loading implemented and tested
@@ -42,7 +44,7 @@ Completed:
 - Ruff check passed
 - Mypy passed
 
-Latest commit: 41e0029
+Latest commit: b3b8639
 Working tree: clean
 
 Known issues:
@@ -51,4 +53,4 @@ Known issues:
 - Ruff format 0.16.7 previously crashed on BOM-encoded files; project files are now written without BOM.
 
 Next:
-- Implement image histogram.
+- Begin Phase 2 — Mathematics Behind Seeing Patterns.
