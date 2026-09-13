@@ -2,15 +2,15 @@
 
 Project: How-Machines-Learn-Images
 Milestone: M1 — Understand Images
-Phase: Phase 1 — What Is an Image?
-Current task: Phase 1 complete — awaiting Phase 2
+Phase: Phase 2 — Mathematics Behind Seeing Patterns
+Current task: 2.2 — Dot product
 
-Latest commit: b3b8639
-Tests: 108 passed
+Latest commit: 11c368a
+Tests: 115 passed
 Quality checks: Ruff passed, Mypy passed
 Working tree: clean
 
 Next:
-Begin Phase 2 — Mathematics Behind Seeing Patterns.
+Implement Phase 2.2 — Dot product.
 
 Repository is the source of truth.

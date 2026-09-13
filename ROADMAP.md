@@ -35,7 +35,7 @@
 - [x] 1.16 Tests
 
 ### Phase 2 — Mathematics Behind Seeing Patterns
-- [ ] 2.1–2.16
+- [x] 2.1 Vectors
 
 ### Phase 3 — Convolution From Scratch
 - [ ] 3.1–3.15
