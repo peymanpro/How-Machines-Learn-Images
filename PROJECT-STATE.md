@@ -2,13 +2,12 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 0 — Foundation
-Current task: 0.6 — Git configuration
+Current task: 0.7 — README
 
 Completed:
 - Repository initialized
 - Python 3.12.10 verified
 - Virtual environment created
-- pip upgraded to 26.2.1
 - NumPy 2.5.3 installed
 - Pillow 12.3.0 installed
 - pytest 9.1.1 installed
@@ -20,14 +19,15 @@ Completed:
 - ROADMAP.md created
 - PROJECT-STATE.md created
 - HANDOFF.md created
-- pytest environment test created
+- Environment test created
 - Ruff check passed
 - Ruff format passed
 - Mypy passed
 - Pytest: 1 passed
-- Development quality tooling committed
+- Git normalization settings configured
+- Foundation progress committed
 
-Latest commit: 7e9467f
+Latest commit: f672136
 Working tree: clean
 
 Known issues:
@@ -35,4 +35,4 @@ Known issues:
 - Tencent PyPI mirror successfully installs required packages.
 
 Next:
-- Configure Git normalization/settings for the repository.
+- Finalize README foundation content.
