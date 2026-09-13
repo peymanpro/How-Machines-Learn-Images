@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 0 — Foundation
-Current task: 0.7 — README
+Current task: 0.8 — ROADMAP
 
 Completed:
 - Repository initialized
@@ -15,19 +15,19 @@ Completed:
 - Mypy 2.3.1 installed
 - requirements.txt created
 - .gitignore created
-- README.md created
-- ROADMAP.md created
-- PROJECT-STATE.md created
-- HANDOFF.md created
+- README.md established
+- ROADMAP.md established
+- PROJECT-STATE.md established
+- HANDOFF.md established
 - Environment test created
 - Ruff check passed
 - Ruff format passed
 - Mypy passed
 - Pytest: 1 passed
 - Git normalization settings configured
-- Foundation progress committed
+- Foundation documentation committed
 
-Latest commit: f672136
+Latest commit: b5e382e
 Working tree: clean
 
 Known issues:
@@ -35,4 +35,4 @@ Known issues:
 - Tencent PyPI mirror successfully installs required packages.
 
 Next:
-- Finalize README foundation content.
+- Finalize and verify ROADMAP.md.
