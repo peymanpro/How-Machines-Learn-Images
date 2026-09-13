@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 0 — Foundation
-Current task: 0.8 — ROADMAP
+Current task: 0.11 — Project contracts
 
 Completed:
 - Repository initialized
@@ -25,14 +25,14 @@ Completed:
 - Mypy passed
 - Pytest: 1 passed
 - Git normalization settings configured
-- Foundation documentation committed
+- Foundation documentation established
 
-Latest commit: b5e382e
-Working tree: clean
+Latest commit: ea0ced0
+Working tree: clean before current changes
 
 Known issues:
 - Default PyPI candidate resolution failed in this environment.
 - Tencent PyPI mirror successfully installs required packages.
 
 Next:
-- Finalize and verify ROADMAP.md.
+- Define the project's Stop, Error, Git Safety, Security, Scope, and Completion contracts.
