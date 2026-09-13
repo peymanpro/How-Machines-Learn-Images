@@ -32,3 +32,10 @@ class Vector:
     @property
     def magnitude(self) -> float:
         return float(np.sqrt(np.sum(self.values * self.values)))
+
+    def dot(self, other: Vector) -> float:
+        """Return the dot product with another vector."""
+        if self.dimension != other.dimension:
+            raise ValueError("Vectors must have the same dimension.")
+
+        return float(np.sum(self.values * other.values))

@@ -24,6 +24,28 @@ def test_vector_supports_integer_values() -> None:
     assert vector.components == (1.0, 2.0, 3.0)
 
 
+def test_vector_dot_product() -> None:
+    first = Vector(np.array([1.0, 2.0, 3.0]))
+    second = Vector(np.array([4.0, 5.0, 6.0]))
+
+    assert first.dot(second) == 32.0
+
+
+def test_vector_dot_product_is_symmetric() -> None:
+    first = Vector(np.array([1.0, -2.0, 3.0]))
+    second = Vector(np.array([4.0, 5.0, -6.0]))
+
+    assert first.dot(second) == second.dot(first)
+
+
+def test_vector_dot_product_rejects_different_dimensions() -> None:
+    first = Vector(np.array([1.0, 2.0]))
+    second = Vector(np.array([3.0, 4.0, 5.0]))
+
+    with pytest.raises(ValueError, match="same dimension"):
+        first.dot(second)
+
+
 def test_vector_rejects_non_vector_array() -> None:
     with pytest.raises(ValueError, match="1D"):
         Vector(np.zeros((2, 2)))
