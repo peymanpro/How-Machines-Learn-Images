@@ -38,6 +38,7 @@
 - [x] 2.1 Vectors
 - [x] 2.2 Dot product
 - [x] 2.3 Matrices
+- [x] 2.4 Matrix multiplication
 
 ### Phase 3 — Convolution From Scratch
 - [ ] 3.1–3.15
