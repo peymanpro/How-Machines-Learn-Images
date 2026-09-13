@@ -1,15 +1,15 @@
 ﻿# Handoff
 
 Project: How-Machines-Learn-Images
+Milestone: M1 — Understand Images
+Phase: Phase 0 — Foundation
+Current task: 0.5 — Lint / format / type checking
 
-Current milestone: M1 — Understand Images
-Current phase: Phase 0 — Foundation
-Current task: 0.4 — Test framework
+Latest commit: 248ef0c
+Tests: 1 passed
+Working tree: clean
 
-Latest commit: 5ebcd8d
+Next:
+Add development quality tooling and verify it.
 
-Next action:
-Establish the pytest test structure and create the first project test.
-
-Rule:
-Repository state is the source of truth.
+Repository is the source of truth.
