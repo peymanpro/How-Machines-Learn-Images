@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 1 — What Is an Image?
-Current task: 1.12 — Basic visualization
+Current task: 1.13 — Pixel inspection
 
 Completed:
 - Phase 0 — Foundation completed
@@ -17,8 +17,9 @@ Completed:
 - Phase 1.9 — Saving images completed
 - Phase 1.10 — Normalization completed
 - Phase 1.11 — Resizing completed
+- Phase 1.12 — Basic visualization completed
 - Image normalization implemented and tested
-- 67 tests passing
+- 76 tests passing
 - Image saving and validation implemented
 - 51 tests passing
 - Image loading implemented and tested
@@ -39,7 +40,7 @@ Completed:
 - Ruff check passed
 - Mypy passed
 
-Latest commit: 9604803
+Latest commit: 8fce866
 Working tree: clean
 
 Known issues:
@@ -48,4 +49,4 @@ Known issues:
 - Ruff format 0.16.7 previously crashed on BOM-encoded files; project files are now written without BOM.
 
 Next:
-- Implement basic image visualization.
+- Implement pixel inspection.
