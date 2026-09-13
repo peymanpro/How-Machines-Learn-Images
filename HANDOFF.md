@@ -3,15 +3,14 @@
 Project: How-Machines-Learn-Images
 Milestone: M1 — Understand Images
 Phase: Phase 1 — What Is an Image?
-Current task: 1.1 — Pixel
+Current task: 1.2 — Intensity
 
-Latest commit: 689c31d
-Phase 0: completed
-Tests: 1 passed
+Latest commit: ea088a6
+Tests: 6 passed
 Quality checks: Ruff passed, Mypy passed
-Working tree: clean before current changes
+Working tree: clean
 
 Next:
-Start Phase 1.1 — Pixel.
+Implement Phase 1.2 — Intensity.
 
 Repository is the source of truth.
