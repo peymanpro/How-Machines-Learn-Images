@@ -1,4 +1,4 @@
-﻿# Roadmap
+# Roadmap
 
 ## Milestone 1 — Understand Images
 
@@ -17,7 +17,7 @@
 - [x] 0.12 First project test
 
 ### Phase 1 — What Is an Image?
-- [ ] 1.1 Pixel
+- [x] 1.1 Pixel
 - [ ] 1.2 Intensity
 - [ ] 1.3 Grayscale
 - [ ] 1.4 RGB
