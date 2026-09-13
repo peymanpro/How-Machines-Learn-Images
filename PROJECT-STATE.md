@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 2 — Mathematics Behind Seeing Patterns
-Current task: 2.6 — Cosine similarity
+Current task: 2.7 — Linear transformations
 
 Completed:
 - Phase 0 — Foundation completed
@@ -27,8 +27,9 @@ Completed:
 - Phase 2.3 — Matrices completed
 - Phase 2.4 — Matrix multiplication completed
 - Phase 2.5 — Norms and distance completed
+- Phase 2.6 — Cosine similarity completed
 - Image normalization implemented and tested
-- 140 tests passing
+- 147 tests passing
 - Image saving and validation implemented
 - 51 tests passing
 - Image loading implemented and tested
@@ -58,4 +59,4 @@ Known issues:
 - Ruff format 0.16.7 previously crashed on BOM-encoded files; project files are now written without BOM.
 
 Next:
-- Implement cosine similarity.
+- Implement linear transformations.

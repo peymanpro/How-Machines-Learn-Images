@@ -40,7 +40,8 @@
 - [x] 2.3 Matrices
 - [x] 2.4 Matrix multiplication
 - [x] 2.5 Norms and distance
-- [ ] 2.6 Cosine similarity
+- [x] 2.6 Cosine similarity
+- [ ] 2.7 Linear transformations
 
 ### Phase 3 — Convolution From Scratch
 - [ ] 3.1–3.15
