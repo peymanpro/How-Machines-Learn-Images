@@ -2,7 +2,7 @@
 
 Current milestone: M1 — Understand Images
 Current phase: Phase 2 — Mathematics Behind Seeing Patterns
-Current task: 2.5 — Norms and distance
+Current task: 2.6 — Cosine similarity
 
 Completed:
 - Phase 0 — Foundation completed
@@ -26,8 +26,9 @@ Completed:
 - Phase 2.2 — Dot product completed
 - Phase 2.3 — Matrices completed
 - Phase 2.4 — Matrix multiplication completed
+- Phase 2.5 — Norms and distance completed
 - Image normalization implemented and tested
-- 131 tests passing
+- 140 tests passing
 - Image saving and validation implemented
 - 51 tests passing
 - Image loading implemented and tested
@@ -57,4 +58,4 @@ Known issues:
 - Ruff format 0.16.7 previously crashed on BOM-encoded files; project files are now written without BOM.
 
 Next:
-- Implement norms and distance.
+- Implement cosine similarity.
