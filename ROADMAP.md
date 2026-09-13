@@ -26,7 +26,7 @@
 - [x] 1.7 Image as tensor
 - [x] 1.8 Loading images
 - [x] 1.9 Saving images
-- [ ] 1.10 Normalization
+- [x] 1.10 Normalization
 - [ ] 1.11 Resizing
 - [ ] 1.12 Basic visualization
 - [ ] 1.13 Pixel inspection
