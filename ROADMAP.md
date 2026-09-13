@@ -23,7 +23,7 @@
 - [x] 1.4 RGB
 - [x] 1.5 Image shape
 - [x] 1.6 Image as matrix
-- [ ] 1.7 Image as tensor
+- [x] 1.7 Image as tensor
 - [ ] 1.8 Loading images
 - [ ] 1.9 Saving images
 - [ ] 1.10 Normalization
