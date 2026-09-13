@@ -39,7 +39,8 @@
 - [x] 2.2 Dot product
 - [x] 2.3 Matrices
 - [x] 2.4 Matrix multiplication
-- [ ] 2.5 Norms and distance
+- [x] 2.5 Norms and distance
+- [ ] 2.6 Cosine similarity
 
 ### Phase 3 — Convolution From Scratch
 - [ ] 3.1–3.15
