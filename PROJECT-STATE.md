@@ -1,8 +1,8 @@
 # Project State
 
 Current milestone: M1 — Understand Images
-Current phase: Phase 1 — What Is an Image?
-Current task: Phase 1 complete — awaiting Phase 2
+Current phase: Phase 2 — Mathematics Behind Seeing Patterns
+Current task: 2.2 — Dot product
 
 Completed:
 - Phase 0 — Foundation completed
@@ -22,8 +22,9 @@ Completed:
 - Phase 1.14 — Channel visualization completed
 - Phase 1.15 — Histogram completed
 - Phase 1.16 — Tests completed
+- Phase 2.1 — Vectors completed
 - Image normalization implemented and tested
-- 108 tests passing
+- 115 tests passing
 - Image saving and validation implemented
 - 51 tests passing
 - Image loading implemented and tested
@@ -53,4 +54,4 @@ Known issues:
 - Ruff format 0.16.7 previously crashed on BOM-encoded files; project files are now written without BOM.
 
 Next:
-- Begin Phase 2 — Mathematics Behind Seeing Patterns.
+- Implement dot product.
