@@ -55,6 +55,60 @@ def test_vector_distance_is_symmetric() -> None:
     assert first.distance_to(second) == second.distance_to(first)
 
 
+def test_vector_cosine_similarity_of_identical_vectors() -> None:
+    first = Vector(np.array([1.0, 2.0, 3.0]))
+    second = Vector(np.array([1.0, 2.0, 3.0]))
+
+    assert first.cosine_similarity(second) == pytest.approx(1.0)
+
+
+def test_vector_cosine_similarity_of_orthogonal_vectors() -> None:
+    first = Vector(np.array([1.0, 0.0]))
+    second = Vector(np.array([0.0, 1.0]))
+
+    assert first.cosine_similarity(second) == pytest.approx(0.0)
+
+
+def test_vector_cosine_similarity_of_opposite_vectors() -> None:
+    first = Vector(np.array([1.0, 2.0]))
+    second = Vector(np.array([-1.0, -2.0]))
+
+    assert first.cosine_similarity(second) == pytest.approx(-1.0)
+
+
+def test_vector_cosine_similarity_is_symmetric() -> None:
+    first = Vector(np.array([1.0, 2.0, 3.0]))
+    second = Vector(np.array([4.0, 5.0, 6.0]))
+
+    assert first.cosine_similarity(second) == pytest.approx(
+        second.cosine_similarity(first)
+    )
+
+
+def test_vector_cosine_similarity_rejects_zero_first_vector() -> None:
+    first = Vector(np.array([0.0, 0.0]))
+    second = Vector(np.array([1.0, 2.0]))
+
+    with pytest.raises(ValueError, match="undefined for a zero vector"):
+        first.cosine_similarity(second)
+
+
+def test_vector_cosine_similarity_rejects_zero_second_vector() -> None:
+    first = Vector(np.array([1.0, 2.0]))
+    second = Vector(np.array([0.0, 0.0]))
+
+    with pytest.raises(ValueError, match="undefined for a zero vector"):
+        first.cosine_similarity(second)
+
+
+def test_vector_cosine_similarity_rejects_different_dimensions() -> None:
+    first = Vector(np.array([1.0, 2.0]))
+    second = Vector(np.array([1.0, 2.0, 3.0]))
+
+    with pytest.raises(ValueError, match="same dimension"):
+        first.cosine_similarity(second)
+
+
 def test_vector_dot_product() -> None:
     first = Vector(np.array([1.0, 2.0, 3.0]))
     second = Vector(np.array([4.0, 5.0, 6.0]))
