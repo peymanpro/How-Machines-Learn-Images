@@ -27,7 +27,7 @@
 - [x] 1.8 Loading images
 - [x] 1.9 Saving images
 - [x] 1.10 Normalization
-- [ ] 1.11 Resizing
+- [x] 1.11 Resizing
 - [ ] 1.12 Basic visualization
 - [ ] 1.13 Pixel inspection
 - [ ] 1.14 Channel visualization
