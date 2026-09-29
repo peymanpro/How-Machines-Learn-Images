@@ -3,6 +3,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from math import prod, sqrt
+from typing import cast
 
 import numpy as np
 
@@ -69,7 +70,7 @@ class Dense(Layer):
             raise ValueError("Dense input width must match input_size.")
 
         self._input = values
-        return values @ self.weights.value + self.bias.value
+        return cast(np.ndarray, values @ self.weights.value + self.bias.value)
 
     def backward(self, gradient: np.ndarray) -> np.ndarray:
         if self._input is None:
@@ -79,7 +80,7 @@ class Dense(Layer):
 
         self.weights.gradient[...] = self._input.T @ gradient
         self.bias.gradient[...] = np.sum(gradient, axis=0)
-        return gradient @ self.weights.value.T
+        return cast(np.ndarray, gradient @ self.weights.value.T)
 
     def parameters(self) -> tuple[Parameter, ...]:
         return (self.weights, self.bias)
@@ -127,7 +128,7 @@ class Flatten(Layer):
         if values.ndim < 2:
             raise ValueError("Flatten expects a batch dimension.")
         self._input_shape = tuple(int(size) for size in values.shape)
-        return values.reshape(values.shape[0], -1)
+        return cast(np.ndarray, values.reshape(values.shape[0], -1))
 
     def backward(self, gradient: np.ndarray) -> np.ndarray:
         if self._input_shape is None:
