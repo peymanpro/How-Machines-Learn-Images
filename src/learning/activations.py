@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+from typing import cast
+
 import numpy as np
 
 
 def relu(values: np.ndarray) -> np.ndarray:
     """Return max(0, x) element-wise."""
-    return np.maximum(values, 0.0)
+    return cast(np.ndarray, np.maximum(values, 0.0))
 
 
 def relu_derivative(values: np.ndarray) -> np.ndarray:
@@ -48,4 +50,4 @@ def softmax(logits: np.ndarray) -> np.ndarray:
 
     shifted = logits - np.max(logits, axis=1, keepdims=True)
     exponentials = np.exp(shifted)
-    return exponentials / np.sum(exponentials, axis=1, keepdims=True)
+    return cast(np.ndarray, exponentials / np.sum(exponentials, axis=1, keepdims=True))

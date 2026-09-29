@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import struct
 from pathlib import Path
+from typing import BinaryIO
 
 import numpy as np
 
@@ -10,7 +11,7 @@ IMAGE_MAGIC = 2051
 LABEL_MAGIC = 2049
 
 
-def _read_header(handle, format_string: str) -> tuple[int, ...]:
+def _read_header(handle: BinaryIO, format_string: str) -> tuple[int, ...]:
     size = struct.calcsize(format_string)
     raw = handle.read(size)
     if len(raw) != size:

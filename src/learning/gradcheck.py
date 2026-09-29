@@ -15,10 +15,7 @@ def numerical_gradient(
         raise ValueError("Epsilon must be positive.")
 
     result = np.zeros_like(values, dtype=np.float64)
-    iterator = np.nditer(values, flags=["multi_index"], op_flags=["readwrite"])
-
-    while not iterator.finished:
-        index = iterator.multi_index
+    for index in np.ndindex(values.shape):
         original = float(values[index])
 
         values[index] = original + epsilon
@@ -29,8 +26,6 @@ def numerical_gradient(
 
         values[index] = original
         result[index] = (positive - negative) / (2.0 * epsilon)
-        iterator.iternext()
-
     return result
 
 

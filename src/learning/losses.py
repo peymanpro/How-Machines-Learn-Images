@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import cast
+
 import numpy as np
 
 from src.learning.activations import softmax
@@ -19,7 +21,7 @@ def mean_squared_error_gradient(
     """Return the gradient of mean squared error with respect to predictions."""
     if predictions.shape != targets.shape:
         raise ValueError("Predictions and targets must have the same shape.")
-    return 2.0 * (predictions - targets) / predictions.size
+    return cast(np.ndarray, 2.0 * (predictions - targets) / predictions.size)
 
 
 def cross_entropy_from_logits(
@@ -60,7 +62,7 @@ def cross_entropy_gradient_from_logits(
 
     gradient = probabilities.copy()
     gradient[np.arange(logits.shape[0]), labels] -= 1.0
-    return gradient / logits.shape[0]
+    return cast(np.ndarray, gradient / logits.shape[0])
 
 
 def classification_accuracy(logits: np.ndarray, labels: np.ndarray) -> float:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import hypot
 
 
 @dataclass(frozen=True)
@@ -27,7 +28,7 @@ class Vector2D:
     y: float
 
     def magnitude(self) -> float:
-        return (self.x * self.x + self.y * self.y) ** 0.5
+        return hypot(self.x, self.y)
 
     def add_to(self, point: Point2D) -> Point2D:
         """Translate a point by this vector."""
