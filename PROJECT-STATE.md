@@ -26,6 +26,10 @@ Status: Complete / release-ready
 - Phase 17 — Documentation and portfolio polish
 - Phase 18 — Release preparation
 
+## Verification baseline
+
+The latest complete CI verification passed **212 tests** plus training smoke tests, Ruff linting, Ruff formatting checks and strict Mypy checking.
+
 ## Verification policy
 
 The repository's source of truth is Git history plus the required CI workflow.

@@ -22,6 +22,9 @@ Image → Mathematics → Convolution → Neuron → Loss → Gradient → Backp
 
 ## Final verification
 
+The latest complete CI run passed **212 tests**, both synthetic training smoke commands, Ruff, Ruff format and strict Mypy.
+
+
 Run:
 
 ```bash
