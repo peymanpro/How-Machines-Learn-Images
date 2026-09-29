@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 from src.learning.layers import Parameter
+from src.learning.model import History, Sequential
 
 
 class SGD:
     """Vanilla stochastic gradient descent."""
 
-    def __init__(self, parameters: tuple[Parameter, ...], learning_rate: float = 0.01) -> None:
+    def __init__(
+        self,
+        parameters: tuple[Parameter, ...],
+        learning_rate: float = 0.01,
+    ) -> None:
         if learning_rate <= 0.0:
             raise ValueError("Learning rate must be positive.")
         if not parameters:
@@ -20,15 +25,13 @@ class SGD:
 
 
 def train(
-    model,
+    model: Sequential,
     inputs,
     labels,
     optimizer: SGD,
     epochs: int,
 ) -> History:
     """Train a classification model on a full in-memory dataset."""
-    from src.learning.model import History
-
     if epochs <= 0:
         raise ValueError("Epochs must be positive.")
     if inputs.shape[0] != labels.shape[0]:
