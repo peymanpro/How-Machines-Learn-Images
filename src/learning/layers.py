@@ -101,6 +101,22 @@ class ReLU(Layer):
         return gradient * (self._input > 0.0)
 
 
+class Tanh(Layer):
+    """Hyperbolic tangent activation."""
+
+    def __init__(self) -> None:
+        self._output: np.ndarray | None = None
+
+    def forward(self, values: np.ndarray) -> np.ndarray:
+        self._output = np.tanh(values)
+        return self._output
+
+    def backward(self, gradient: np.ndarray) -> np.ndarray:
+        if self._output is None:
+            raise RuntimeError("Tanh backward called before forward.")
+        return gradient * (1.0 - self._output * self._output)
+
+
 class Flatten(Layer):
     """Flatten all non-batch dimensions into a feature vector."""
 

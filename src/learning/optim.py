@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import numpy as np
+
 from src.learning.layers import Parameter
 from src.learning.model import History, Sequential
 
@@ -26,8 +28,8 @@ class SGD:
 
 def train(
     model: Sequential,
-    inputs,
-    labels,
+    inputs: np.ndarray,
+    labels: np.ndarray,
     optimizer: SGD,
     epochs: int,
 ) -> History:
