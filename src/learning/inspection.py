@@ -41,5 +41,5 @@ def trace_layer_outputs(
     outputs = model.forward_trace(values)
     return tuple(
         (layer.__class__.__name__, activation_statistics(output))
-        for layer, output in zip(model.layers, outputs)
+        for layer, output in zip(model.layers, outputs, strict=True)
     )
