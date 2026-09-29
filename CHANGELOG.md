@@ -21,4 +21,6 @@
 
 ### Notes
 
+The final CI baseline is 212 passing tests with lint, formatting, strict typing and training smoke checks green.
+
 This release is educational by design. The implementation favors transparency and testability over optimized kernels and large-scale training infrastructure.
