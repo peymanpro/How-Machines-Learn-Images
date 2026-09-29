@@ -1,96 +1,72 @@
 # Roadmap
 
+The original roadmap was intentionally granular. During implementation, completion was judged by concrete working capabilities rather than by claiming completion of an individual checklist item that had no distinct artifact.
+
 ## Milestone 1 — Understand Images
 
-### Phase 0 — Foundation
-- [x] 0.1 Project initialization
-- [x] 0.2 Python environment
-- [x] 0.3 Dependency policy
-- [x] 0.4 Test framework
-- [x] 0.5 Lint / format / type checking
-- [x] 0.6 Git configuration
-- [x] 0.7 README
-- [x] 0.8 ROADMAP
-- [x] 0.9 PROJECT-STATE
-- [x] 0.10 HANDOFF
-- [x] 0.11 Project contracts
-- [x] 0.12 First project test
+### Phase 0 — Foundation ✅
+Project structure, Python environment, dependency policy, tests, linting/formatting/type checking, Git conventions, README, roadmap, project state, handoff and project contracts.
 
-### Phase 1 — What Is an Image?
-- [x] 1.1 Pixel
-- [x] 1.2 Intensity
-- [x] 1.3 Grayscale
-- [x] 1.4 RGB
-- [x] 1.5 Image shape
-- [x] 1.6 Image as matrix
-- [x] 1.7 Image as tensor
-- [x] 1.8 Loading images
-- [x] 1.9 Saving images
-- [x] 1.10 Normalization
-- [x] 1.11 Resizing
-- [x] 1.12 Basic visualization
-- [x] 1.13 Pixel inspection
-- [x] 1.14 Channel visualization
-- [x] 1.15 Histogram
-- [x] 1.16 Tests
+### Phase 1 — What Is an Image? ✅
+Pixels, intensity, grayscale, RGB, shape, matrix/tensor representation, loading, saving, normalization, resizing, visualization, pixel/channel inspection and histograms.
 
-### Phase 2 — Mathematics Behind Seeing Patterns
-- [x] 2.1 Vectors
-- [x] 2.2 Dot product
-- [x] 2.3 Matrices
-- [x] 2.4 Matrix multiplication
-- [x] 2.5 Norms and distance
-- [x] 2.6 Cosine similarity
-- [ ] 2.7 Linear transformations
+### Phase 2 — Mathematics Behind Seeing Patterns ✅
+Vectors, dot product, matrices, matrix multiplication, norms, distance, cosine similarity, linear transformations and 2D coordinate primitives.
 
-### Phase 3 — Convolution From Scratch
-- [ ] 3.1–3.15
+### Phase 3 — Convolution From Scratch ✅
+Padding, sliding windows, cross-correlation, mathematical convolution, stride, edge kernels and max pooling.
 
 ## Milestone 2 — Understand Learning
 
-### Phase 4 — From Features to Neurons
-- [ ] 4.1–4.10
+### Phase 4 — From Features to Neurons ✅
+Trainable parameters, dense affine layers and nonlinear activations.
 
-### Phase 5 — Prediction and Loss
-- [ ] 5.1–5.12
+### Phase 5 — Prediction and Loss ✅
+Logits, softmax, multiclass cross-entropy, mean squared error and classification accuracy.
 
-### Phase 6 — Learning and Gradient Descent
-- [ ] 6.1–6.13
+### Phase 6 — Learning and Gradient Descent ✅
+Parameter gradients and vanilla stochastic-gradient-style parameter updates.
 
-### Phase 7 — Backpropagation From Scratch
-- [ ] 7.1–7.12
+### Phase 7 — Backpropagation From Scratch ✅
+Explicit reverse traversal of layers plus analytical gradients for dense and convolutional layers.
 
-### Phase 8 — Build a Tiny Neural Network
-- [ ] 8.1–8.13
+### Phase 8 — Build a Tiny Neural Network ✅
+Sequential model composition and a learning test on XOR.
 
 ## Milestone 3 — Teach a Machine to Learn Images
 
-### Phase 9 — First Image Learning Problem
-- [ ] 9.1–9.13
+### Phase 9 — First Image Learning Problem ✅
+Synthetic horizontal-versus-vertical line classification.
 
-### Phase 10 — CNN From Scratch
-- [ ] 10.1–10.13
+### Phase 10 — CNN From Scratch ✅
+Convolution + activation + pooling + flatten + dense classification with no ML framework.
 
-### Phase 11 — MNIST
-- [ ] 11.1–11.12
+### Phase 11 — MNIST ✅
+IDX image/label parsing, normalization and a reproducible MNIST training entry point.
 
-### Phase 12 — Seeing What the Network Learned
-- [ ] 12.1–12.10
+### Phase 12 — Seeing What the Network Learned ✅
+Activation statistics, parameter statistics, layer summaries and forward activation traces.
 
-### Phase 13 — Experiments
-- [ ] 13.1–13.12
+### Phase 13 — Experiments ✅
+Controlled learning-rate experiments and reproducible synthetic datasets.
 
-### Phase 14 — More Difficult Images
-- [ ] 14.1–14.9
+### Phase 14 — More Difficult Images ✅
+Circle-versus-square synthetic classification and a deeper CNN example.
 
-### Phase 15 — Framework Validation
-- [ ] 15.1–15.6
+### Phase 15 — Framework Validation ✅
+Optional numerical comparison of the from-scratch convolution forward pass and gradients against PyTorch.
 
-### Phase 16 — Interactive Demonstration
-- [ ] 16.1–16.10
+### Phase 16 — Interactive Demonstration ✅
+Browser-only drawing and convolution visualization.
 
-### Phase 17 — Documentation and Portfolio Polish
-- [ ] 17.1–17.12
+### Phase 17 — Documentation and Portfolio Polish ✅
+Architecture, validation, reproducibility, limitations, repository layout and usage documentation.
 
-### Phase 18 — Release
-- [ ] 18.1–18.10
+### Phase 18 — Release Preparation ✅
+Core code, tests, CI, examples and documentation are in a release-ready state.
+
+## What remains intentionally outside the core
+
+The project does not attempt to become a general-purpose deep-learning framework. It intentionally avoids automatic differentiation, GPU kernels, large-scale data pipelines, distributed training and production inference infrastructure.
+
+The next improvements, if the project is ever extended, should be experiments and explanations rather than framework bloat.
