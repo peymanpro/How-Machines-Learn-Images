@@ -1,62 +1,56 @@
 # Project State
 
-Current milestone: M1 — Understand Images
-Current phase: Phase 2 — Mathematics Behind Seeing Patterns
-Current task: 2.7 — Linear transformations
+Current milestone: M3 — Teach a Machine to Learn Images
+Current phase: Phase 18 — Release Preparation
+Status: Complete / release-ready
 
-Completed:
-- Phase 0 — Foundation completed
-- Phase 1.1 — Pixel completed
-- Phase 1.2 — Intensity completed
-- Phase 1.3 — Grayscale completed
-- Phase 1.4 — RGB completed
-- Phase 1.5 — Image shape completed
-- Phase 1.6 — Image as matrix completed
-- Phase 1.7 — Image as tensor completed
-- Phase 1.8 — Loading images completed
-- Phase 1.9 — Saving images completed
-- Phase 1.10 — Normalization completed
-- Phase 1.11 — Resizing completed
-- Phase 1.12 — Basic visualization completed
-- Phase 1.13 — Pixel inspection completed
-- Phase 1.14 — Channel visualization completed
-- Phase 1.15 — Histogram completed
-- Phase 1.16 — Tests completed
-- Phase 2.1 — Vectors completed
-- Phase 2.2 — Dot product completed
-- Phase 2.3 — Matrices completed
-- Phase 2.4 — Matrix multiplication completed
-- Phase 2.5 — Norms and distance completed
-- Phase 2.6 — Cosine similarity completed
-- Image normalization implemented and tested
-- 147 tests passing
-- Image saving and validation implemented
-- 51 tests passing
-- Image loading implemented and tested
-- 42 tests passing
-- Image tensor validation implemented
-- 40 tests passing
-- 35 tests passing
-- Image shape validation implemented
-- 29 tests passing
-- RGB pixel representation implemented
-- 21 tests passing
-- Grayscale pixel representation implemented
-- 13 tests passing
-- Pixel intensity validation implemented
-- 9 tests passing
-- Pixel validation implemented
-- 6 tests passing
-- Ruff check passed
-- Mypy passed
+## Completed
 
-Latest commit: b3b8639
-Working tree: clean
+- Phase 0 — Foundation
+- Phase 1 — Image representation and inspection
+- Phase 2 — Mathematical foundations and coordinates
+- Phase 3 — Convolution and pooling from scratch
+- Phase 4 — Neurons and trainable affine layers
+- Phase 5 — Activations, prediction and losses
+- Phase 6 — Gradient descent
+- Phase 7 — Backpropagation
+- Phase 8 — Tiny neural network
+- Phase 9 — First synthetic image-learning task
+- Phase 10 — CNN from scratch
+- Phase 11 — MNIST loader and training entry point
+- Phase 12 — Activation and parameter inspection
+- Phase 13 — Controlled experiments
+- Phase 14 — More difficult synthetic images
+- Phase 15 — Optional PyTorch validation
+- Phase 16 — Interactive convolution demo
+- Phase 17 — Documentation and portfolio polish
+- Phase 18 — Release preparation
 
-Known issues:
-- Default PyPI candidate resolution failed in this environment.
-- Tencent PyPI mirror successfully installs required packages.
-- Ruff format 0.16.7 previously crashed on BOM-encoded files; project files are now written without BOM.
+## Verification policy
 
-Next:
-- Implement linear transformations.
+The repository's source of truth is Git history plus the required CI workflow.
+
+Every final state must satisfy:
+
+- pytest passes
+- Ruff lint passes
+- Ruff format check passes
+- strict Mypy passes
+- synthetic training smoke tests execute successfully
+
+## Important implementation boundary
+
+The educational core is framework-free:
+
+`Python + NumPy`
+
+PyTorch is used only by the optional validation script and is not required to run the main project or its tests.
+
+## Known limitations
+
+- MNIST data files are not stored in the repository; the loader expects external IDX files.
+- The convolution and pooling implementations use explicit loops intentionally for clarity, not maximum performance.
+- The project is designed to expose the mechanics of learning rather than compete with optimized ML libraries.
+- Published accuracy should be interpreted as an educational experiment unless reproduced with the same data, seed and hyperparameters.
+
+Repository HEAD is the authoritative version identifier; see Git history for the exact latest commit.
