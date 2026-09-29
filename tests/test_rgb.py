@@ -1,4 +1,4 @@
-﻿import pytest
+import pytest
 
 from src.images.rgb import RGBPixel
 
@@ -22,9 +22,7 @@ def test_rgb_pixel_accepts_valid_channels() -> None:
         (0, 0, 256),
     ],
 )
-def test_rgb_pixel_rejects_invalid_channels(
-    red: int, green: int, blue: int
-) -> None:
+def test_rgb_pixel_rejects_invalid_channels(red: int, green: int, blue: int) -> None:
     with pytest.raises(ValueError):
         RGBPixel(red, green, blue)
 

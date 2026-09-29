@@ -189,9 +189,7 @@ class MaxPool2D(Layer):
                             row_start : row_start + self.pool_size,
                             column_start : column_start + self.pool_size,
                         ]
-                        argmax[batch_index, channel, row, column] = int(
-                            np.argmax(window)
-                        )
+                        argmax[batch_index, channel, row, column] = int(np.argmax(window))
 
         self._input = values
         self._argmax = argmax
@@ -376,7 +374,5 @@ class Conv2D(Layer):
 def parameter_count(layers: list[Layer]) -> int:
     """Return the total number of scalar trainable parameters."""
     return sum(
-        int(prod(parameter.value.shape))
-        for layer in layers
-        for parameter in layer.parameters()
+        int(prod(parameter.value.shape)) for layer in layers for parameter in layer.parameters()
     )

@@ -48,9 +48,7 @@ class Matrix:
     def multiply(self, other: Matrix) -> Matrix:
         """Return the matrix product with another matrix."""
         if self.columns != other.rows:
-            raise ValueError(
-                "Matrix dimensions are incompatible for multiplication."
-            )
+            raise ValueError("Matrix dimensions are incompatible for multiplication.")
 
         result = self.values @ other.values
         return Matrix(np.asarray(result))
@@ -58,9 +56,7 @@ class Matrix:
     def transform(self, vector: Vector) -> Vector:
         """Apply this linear transformation to a compatible vector."""
         if self.columns != vector.dimension:
-            raise ValueError(
-                "Matrix columns must match vector dimension for transformation."
-            )
+            raise ValueError("Matrix columns must match vector dimension for transformation.")
 
         result = self.values @ vector.values
         return Vector(np.asarray(result, dtype=np.float64))
