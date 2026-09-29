@@ -1,4 +1,4 @@
-﻿import pytest
+import pytest
 
 from src.images.shape import ImageShape
 
@@ -28,8 +28,6 @@ def test_rgb_image_shape() -> None:
         (10, 10, -1),
     ],
 )
-def test_image_shape_rejects_invalid_values(
-    height: int, width: int, channels: int
-) -> None:
+def test_image_shape_rejects_invalid_values(height: int, width: int, channels: int) -> None:
     with pytest.raises(ValueError):
         ImageShape(height=height, width=width, channels=channels)

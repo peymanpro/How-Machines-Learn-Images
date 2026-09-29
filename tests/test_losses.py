@@ -31,9 +31,7 @@ def test_cross_entropy_known_case() -> None:
     logits = np.array([[2.0, 0.0]])
     labels = np.array([0], dtype=np.int64)
 
-    assert cross_entropy_from_logits(logits, labels) == pytest.approx(
-        np.log(1.0 + np.exp(-2.0))
-    )
+    assert cross_entropy_from_logits(logits, labels) == pytest.approx(np.log(1.0 + np.exp(-2.0)))
 
 
 def test_cross_entropy_gradient_sums_to_zero() -> None:

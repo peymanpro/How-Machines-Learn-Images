@@ -78,8 +78,7 @@ def generate_shape_dataset(
             dy = np.abs(yy - center)
             inside = (dx <= half_width) & (dy <= half_width)
             boundary = inside & (
-                (np.abs(dx - half_width) <= 0.8)
-                | (np.abs(dy - half_width) <= 0.8)
+                (np.abs(dx - half_width) <= 0.8) | (np.abs(dy - half_width) <= 0.8)
             )
             inputs[index, 0] += boundary.astype(float)
 

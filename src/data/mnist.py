@@ -6,7 +6,6 @@ from typing import BinaryIO
 
 import numpy as np
 
-
 IMAGE_MAGIC = 2051
 LABEL_MAGIC = 2049
 

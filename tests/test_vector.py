@@ -80,9 +80,7 @@ def test_vector_cosine_similarity_is_symmetric() -> None:
     first = Vector(np.array([1.0, 2.0, 3.0]))
     second = Vector(np.array([4.0, 5.0, 6.0]))
 
-    assert first.cosine_similarity(second) == pytest.approx(
-        second.cosine_similarity(first)
-    )
+    assert first.cosine_similarity(second) == pytest.approx(second.cosine_similarity(first))
 
 
 def test_vector_cosine_similarity_rejects_zero_first_vector() -> None:

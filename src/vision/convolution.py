@@ -84,13 +84,7 @@ def convolve2d(
 def edge_kernels() -> dict[str, np.ndarray]:
     """Return small kernels commonly used to expose edges and gradients."""
     return {
-        "horizontal": np.array(
-            [[-1.0, -1.0, -1.0], [0.0, 0.0, 0.0], [1.0, 1.0, 1.0]]
-        ),
-        "vertical": np.array(
-            [[-1.0, 0.0, 1.0], [-1.0, 0.0, 1.0], [-1.0, 0.0, 1.0]]
-        ),
-        "sharpen": np.array(
-            [[0.0, -1.0, 0.0], [-1.0, 5.0, -1.0], [0.0, -1.0, 0.0]]
-        ),
+        "horizontal": np.array([[-1.0, -1.0, -1.0], [0.0, 0.0, 0.0], [1.0, 1.0, 1.0]]),
+        "vertical": np.array([[-1.0, 0.0, 1.0], [-1.0, 0.0, 1.0], [-1.0, 0.0, 1.0]]),
+        "sharpen": np.array([[0.0, -1.0, 0.0], [-1.0, 5.0, -1.0], [0.0, -1.0, 0.0]]),
     }

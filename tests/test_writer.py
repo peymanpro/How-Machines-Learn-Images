@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -77,8 +77,6 @@ def test_save_rejects_non_integer_data(tmp_path: Path) -> None:
         np.array([[256]], dtype=np.int16),
     ],
 )
-def test_save_rejects_out_of_range_values(
-    tmp_path: Path, data: np.ndarray
-) -> None:
+def test_save_rejects_out_of_range_values(tmp_path: Path, data: np.ndarray) -> None:
     with pytest.raises(ValueError):
         save_image(data, tmp_path / "output.png")

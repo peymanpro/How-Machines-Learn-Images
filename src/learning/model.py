@@ -40,11 +40,7 @@ class Sequential:
             result = layer.backward(result)
 
     def parameters(self) -> tuple[Parameter, ...]:
-        return tuple(
-            parameter
-            for layer in self.layers
-            for parameter in layer.parameters()
-        )
+        return tuple(parameter for layer in self.layers for parameter in layer.parameters())
 
     def zero_grad(self) -> None:
         for layer in self.layers:
