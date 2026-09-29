@@ -73,10 +73,15 @@ def generate_shape_dataset(
         if label == 0:
             inputs[index, 0] += (np.abs(distance - radius) <= 0.8).astype(float)
         else:
-            edge = size * 0.24
-            outer = (np.abs(xx - center) >= edge) | (np.abs(yy - center) >= edge)
-            inner = (np.abs(xx - center) >= edge) & (np.abs(yy - center) >= edge)
-            inputs[index, 0] += (outer & ~inner).astype(float)
+            half_width = size * 0.24
+            dx = np.abs(xx - center)
+            dy = np.abs(yy - center)
+            inside = (dx <= half_width) & (dy <= half_width)
+            boundary = inside & (
+                (np.abs(dx - half_width) <= 0.8)
+                | (np.abs(dy - half_width) <= 0.8)
+            )
+            inputs[index, 0] += boundary.astype(float)
 
     inputs = np.clip(inputs, 0.0, 1.0)
     shuffle = rng.permutation(samples)

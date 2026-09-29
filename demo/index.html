@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Machines Learn Images — Convolution Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 980px; padding: 0 1rem; }
+    main { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    canvas { width: 240px; height: 240px; image-rendering: pixelated; border: 1px solid #888; background: white; }
+    .panel { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
+    button { padding: .55rem .9rem; cursor: pointer; }
+    code { font-size: .9em; }
+  </style>
+</head>
+<body>
+  <h1>Convolution From Scratch</h1>
+  <p>Draw on the left. The browser performs the same kind of sliding-window multiplication and summation used by the Python implementation.</p>
+  <main>
+    <section class="panel">
+      <h2>Input</h2>
+      <canvas id="input" width="16" height="16"></canvas>
+      <p><button id="clear">Clear</button></p>
+    </section>
+    <section class="panel">
+      <h2>Vertical edge response</h2>
+      <canvas id="output" width="16" height="16"></canvas>
+      <p><code>[[-1,0,1],[-1,0,1],[-1,0,1]]</code></p>
+    </section>
+  </main>
+  <script>
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+    const source = input.getContext("2d");
+    const target = output.getContext("2d");
+    const kernel = [[-1,0,1],[-1,0,1],[-1,0,1]];
+
+    source.fillStyle = "white";
+    source.fillRect(0, 0, 16, 16);
+    source.imageSmoothingEnabled = false;
+    target.imageSmoothingEnabled = false;
+
+    function paintCell(x, y) {
+      source.fillStyle = "black";
+      source.fillRect(x, y, 1, 1);
+      render();
+    }
+
+    input.addEventListener("pointermove", (event) => {
+      if (event.buttons !== 1) return;
+      const rect = input.getBoundingClientRect();
+      const x = Math.floor((event.clientX - rect.left) / rect.width * 16);
+      const y = Math.floor((event.clientY - rect.top) / rect.height * 16);
+      if (x >= 0 && x < 16 && y >= 0 && y < 16) paintCell(x, y);
+    });
+
+    document.getElementById("clear").addEventListener("click", () => {
+      source.fillStyle = "white";
+      source.fillRect(0, 0, 16, 16);
+      render();
+    });
+
+    function readImage() {
+      const pixels = source.getImageData(0, 0, 16, 16).data;
+      const image = Array.from({length: 16}, () => Array(16).fill(0));
+      for (let i = 0; i < 256; i++) image[Math.floor(i / 16)][i % 16] = 1 - pixels[i * 4] / 255;
+      return image;
+    }
+
+    function render() {
+      const image = readImage();
+      const response = Array.from({length: 16}, () => Array(16).fill(0));
+      let maxAbs = 1;
+      for (let y = 1; y < 15; y++) {
+        for (let x = 1; x < 15; x++) {
+          let sum = 0;
+          for (let ky = 0; ky < 3; ky++) {
+            for (let kx = 0; kx < 3; kx++) sum += image[y + ky - 1][x + kx - 1] * kernel[ky][kx];
+          }
+          response[y][x] = sum;
+          maxAbs = Math.max(maxAbs, Math.abs(sum));
+        }
+      }
+      const pixels = target.createImageData(16, 16);
+      for (let i = 0; i < 256; i++) {
+        const value = Math.min(1, Math.abs(response[Math.floor(i / 16)][i % 16]) / maxAbs);
+        const shade = Math.round(255 * (1 - value));
+        pixels.data[i * 4] = shade;
+        pixels.data[i * 4 + 1] = shade;
+        pixels.data[i * 4 + 2] = shade;
+        pixels.data[i * 4 + 3] = 255;
+      }
+      target.putImageData(pixels, 0, 0);
+    }
+
+    render();
+  </script>
+</body>
+</html>
