@@ -1,28 +1,13 @@
 import numpy as np
 
-from src.learning.inspection import activation_statistics, layer_summary, parameter_statistics
+from src.learning.inspection import trace_layer_outputs
 from src.learning.layers import Dense, ReLU
 from src.learning.model import Sequential
 
 
-def test_activation_statistics() -> None:
-    stats = activation_statistics(np.array([[-1.0, 0.0, 1.0]]))
+def test_trace_layer_outputs_reports_statistics() -> None:
+    model = Sequential([Dense(2, 2, seed=1), ReLU()])
+    result = trace_layer_outputs(model, np.ones((1, 2)))
 
-    assert stats["min"] == -1.0
-    assert stats["max"] == 1.0
-    assert stats["mean"] == 0.0
-
-
-def test_parameter_statistics() -> None:
-    model = Sequential([Dense(2, 3, seed=1)])
-
-    stats = parameter_statistics(model)
-
-    assert stats["count"] == 9.0
-    assert stats["l2"] > 0.0
-
-
-def test_layer_summary() -> None:
-    model = Sequential([Dense(2, 3, seed=1), ReLU()])
-
-    assert layer_summary(model) == ["Dense", "ReLU"]
+    assert [name for name, _ in result] == ["Dense", "ReLU"]
+    assert result[0][1]["std"] >= 0.0

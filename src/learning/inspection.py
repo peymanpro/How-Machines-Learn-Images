@@ -31,3 +31,15 @@ def parameter_statistics(model: Sequential) -> dict[str, float]:
 def layer_summary(model: Sequential) -> list[str]:
     """Return one human-readable line per layer."""
     return [layer.__class__.__name__ for layer in model.layers if isinstance(layer, Layer)]
+
+
+def trace_layer_outputs(
+    model: Sequential,
+    values: np.ndarray,
+) -> tuple[tuple[str, dict[str, float]], ...]:
+    """Return per-layer output statistics for an input batch."""
+    outputs = model.forward_trace(values)
+    return tuple(
+        (layer.__class__.__name__, activation_statistics(output))
+        for layer, output in zip(model.layers, outputs)
+    )

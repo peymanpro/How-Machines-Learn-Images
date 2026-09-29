@@ -46,6 +46,23 @@ class Sequential:
         for layer in self.layers:
             layer.zero_grad()
 
+    def evaluate(self, values: np.ndarray, labels: np.ndarray) -> tuple[float, float]:
+        """Return cross-entropy loss and accuracy without changing parameters."""
+        logits = self.forward(values)
+        return (
+            cross_entropy_from_logits(logits, labels),
+            classification_accuracy(logits, labels),
+        )
+
+    def forward_trace(self, values: np.ndarray) -> tuple[np.ndarray, ...]:
+        """Return the output tensor produced by every layer in order."""
+        result = values
+        trace: list[np.ndarray] = []
+        for layer in self.layers:
+            result = layer.forward(result)
+            trace.append(result)
+        return tuple(trace)
+
     def predict(self, values: np.ndarray) -> np.ndarray:
         logits = self.forward(values)
         return np.argmax(logits, axis=1)
