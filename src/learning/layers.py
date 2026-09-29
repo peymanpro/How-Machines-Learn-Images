@@ -358,4 +358,8 @@ class Conv2D(Layer):
 
 def parameter_count(layers: list[Layer]) -> int:
     """Return the total number of scalar trainable parameters."""
-    return sum(int(prod(parameter.value.shape)) for layer in layers for parameter in layer.parameters())
+    return sum(
+        int(prod(parameter.value.shape))
+        for layer in layers
+        for parameter in layer.parameters()
+    )

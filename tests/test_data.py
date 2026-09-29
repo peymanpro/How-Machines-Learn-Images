@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from src.data.mnist import LABEL_MAGIC, load_mnist
+from src.data.mnist import LABEL_MAGIC
 from src.data.synthetic import generate_line_dataset, generate_shape_dataset, train_test_split
 
 

@@ -51,7 +51,10 @@ def cross_correlate2d(
     padded = pad_image(image, padding)
     output_height = _output_size(padded.shape[0], kernel.shape[0], stride, 0)
     output_width = _output_size(padded.shape[1], kernel.shape[1], stride, 0)
-    output = np.empty((output_height, output_width), dtype=np.result_type(image, kernel, np.float64))
+    output = np.empty(
+        (output_height, output_width),
+        dtype=np.result_type(image, kernel, np.float64),
+    )
 
     for row in range(output_height):
         row_start = row * stride

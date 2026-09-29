@@ -1,7 +1,6 @@
-from pathlib import Path
 import struct
+from pathlib import Path
 
-import numpy as np
 import pytest
 
 from src.data.mnist import load_mnist
