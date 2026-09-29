@@ -2,8 +2,8 @@ import numpy as np
 import pytest
 
 from src.data.synthetic import generate_line_dataset
-from src.learning.layers import Conv2D, Dense, Flatten, ReLU, Tanh
 from src.learning.gradcheck import numerical_gradient, relative_error
+from src.learning.layers import Conv2D, Dense, Flatten, MaxPool2D, ReLU, Tanh
 from src.learning.losses import mean_squared_error, mean_squared_error_gradient
 from src.learning.model import Sequential
 from src.learning.optim import SGD, train
@@ -97,12 +97,12 @@ def test_cnn_backprop_changes_loss_on_image_task() -> None:
         [
             Conv2D(1, 2, kernel_size=3, padding=1, seed=1),
             ReLU(),
-            src_pool := __import__("src.learning.layers", fromlist=["MaxPool2D"]).MaxPool2D(),
+            MaxPool2D(),
             Flatten(),
             Dense(2 * 4 * 4, 2, seed=2),
         ]
     )
-    assert src_pool.pool_size == 2
+    assert model.layers[2].pool_size == 2
     optimizer = SGD(model.parameters(), learning_rate=0.05)
 
     history = train(model, inputs, labels, optimizer, epochs=5)
