@@ -4,6 +4,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from src.math.vector import Vector
+
 
 @dataclass(frozen=True)
 class Matrix:
@@ -52,3 +54,13 @@ class Matrix:
 
         result = self.values @ other.values
         return Matrix(np.asarray(result))
+
+    def transform(self, vector: Vector) -> Vector:
+        """Apply this linear transformation to a compatible vector."""
+        if self.columns != vector.dimension:
+            raise ValueError(
+                "Matrix columns must match vector dimension for transformation."
+            )
+
+        result = self.values @ vector.values
+        return Vector(np.asarray(result, dtype=np.float64))
