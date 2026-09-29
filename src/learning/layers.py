@@ -115,7 +115,7 @@ class Tanh(Layer):
     def backward(self, gradient: np.ndarray) -> np.ndarray:
         if self._output is None:
             raise RuntimeError("Tanh backward called before forward.")
-        return gradient * (1.0 - self._output * self._output)
+        return cast(np.ndarray, gradient * (1.0 - self._output * self._output))
 
 
 class Flatten(Layer):
