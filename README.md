@@ -1,6 +1,7 @@
 # How Machines Learn Images
 
 [![Quality](https://github.com/peymanpro/How-Machines-Learn-Images/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/peymanpro/How-Machines-Learn-Images/actions/workflows/quality.yml)
+[![Latest Release](https://img.shields.io/github/v/release/peymanpro/How-Machines-Learn-Images?display_name=tag)](https://github.com/peymanpro/How-Machines-Learn-Images/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A from-scratch, NumPy-based path from image pixels to a trainable convolutional neural network.
@@ -165,6 +166,10 @@ The project follows a few strict rules:
 - document limitations instead of presenting toy results as production benchmarks
 
 This repository is an educational implementation, not a performance-optimized deep-learning library.
+
+## Releases
+
+The automated [Quality workflow](.github/workflows/quality.yml) checks pushes and pull requests against the test suite, synthetic training smoke tests, Ruff, formatting, and strict Mypy. For a published version, the latest successful checks are reviewed first, then the release is created manually from GitHub so the account publishing the release is explicit. See [Release Process](docs/RELEASING.md).
 
 ## License
 
