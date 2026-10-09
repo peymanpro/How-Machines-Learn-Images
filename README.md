@@ -4,6 +4,8 @@
 [![Latest Release](https://img.shields.io/github/v/release/peymanpro/How-Machines-Learn-Images?display_name=tag)](https://github.com/peymanpro/How-Machines-Learn-Images/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+![Image learning pipeline](assets/learning-pipeline.svg)
+
 A from-scratch, NumPy-based path from image pixels to a trainable convolutional neural network.
 
 The project is designed to answer one question:
@@ -11,42 +13,6 @@ The project is designed to answer one question:
 > What actually happens between a matrix of pixels and a machine that can learn visual patterns?
 
 Instead of beginning with PyTorch or TensorFlow, the core learning pipeline is implemented explicitly with Python and NumPy. The repository then validates the implementation with tests, gradient checks, controlled experiments, and an optional comparison against PyTorch.
-
-## Learning path
-
-```
-Pixels
-  ↓
-Image representation
-  ↓
-Vectors / matrices / geometry
-  ↓
-Linear transformations
-  ↓
-Convolution / cross-correlation
-  ↓
-Features
-  ↓
-Neurons / activations
-  ↓
-Prediction / loss
-  ↓
-Gradients
-  ↓
-Backpropagation
-  ↓
-Gradient descent
-  ↓
-Tiny neural network
-  ↓
-CNN
-  ↓
-Image classification
-  ↓
-Inspection / experiments
-  ↓
-Framework validation
-```
 
 ## What is implemented from scratch
 

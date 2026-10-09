@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="235" viewBox="0 0 1160 235" role="img" aria-labelledby="title desc">
+  <title id="title">How an image-learning network trains</title>
+  <desc id="desc">Image pixels move through convolution, activation and pooling, dense layers, prediction and loss. Backpropagation computes gradients, and stochastic gradient descent updates trainable weights before the next pass.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="loopArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#159a78"/>
+    </marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="1159" height="234" rx="18" fill="#f8fafc" stroke="#e2e8f0"/>
+  <g fill="none" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#arrow)">
+    <path d="M154 91 H166"/>
+    <path d="M294 91 H306"/>
+    <path d="M434 91 H446"/>
+    <path d="M574 91 H586"/>
+    <path d="M714 91 H726"/>
+    <path d="M854 91 H866"/>
+    <path d="M994 91 H1006"/>
+  </g>
+  <!-- Image pixels -->
+  <g>
+    <rect x="26" y="39" width="128" height="106" rx="13" fill="#eff6ff" stroke="#bfdbfe"/>
+    <path d="M26 52 Q26 39 39 39 H141 Q154 39 154 52" stroke="#3b82f6" stroke-width="3" fill="none"/>
+    <g transform="translate(78 52)" stroke="#60a5fa" stroke-width="1">
+      <rect x="0" y="0" width="8" height="8" rx="1" fill="#dbeafe"/><rect x="10" y="0" width="8" height="8" rx="1" fill="#93c5fd"/><rect x="20" y="0" width="8" height="8" rx="1" fill="#bfdbfe"/>
+      <rect x="0" y="10" width="8" height="8" rx="1" fill="#60a5fa"/><rect x="10" y="10" width="8" height="8" rx="1" fill="#dbeafe"/><rect x="20" y="10" width="8" height="8" rx="1" fill="#3b82f6"/>
+      <rect x="0" y="20" width="8" height="8" rx="1" fill="#bfdbfe"/><rect x="10" y="20" width="8" height="8" rx="1" fill="#60a5fa"/><rect x="20" y="20" width="8" height="8" rx="1" fill="#dbeafe"/>
+    </g>
+    <text x="90" y="104" fill="#1e3a8a" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Image pixels</text>
+    <text x="90" y="119" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Input image</text>
+  </g>
+  <!-- Convolution -->
+  <g>
+    <rect x="166" y="39" width="128" height="106" rx="13" fill="#eef2ff" stroke="#c7d2fe"/>
+    <path d="M166 52 Q166 39 179 39 H281 Q294 39 294 52" stroke="#6366f1" stroke-width="3" fill="none"/>
+    <g transform="translate(214 53)" stroke="#818cf8" stroke-width="1">
+      <rect width="10" height="10" rx="1" fill="#c7d2fe"/><rect x="12" width="10" height="10" rx="1" fill="#a5b4fc"/><rect x="24" width="10" height="10" rx="1" fill="#c7d2fe"/>
+      <rect y="12" width="10" height="10" rx="1" fill="#a5b4fc"/><rect x="12" y="12" width="10" height="10" rx="1" fill="#6366f1" stroke="#4f46e5"/><rect x="24" y="12" width="10" height="10" rx="1" fill="#a5b4fc"/>
+      <rect y="24" width="10" height="10" rx="1" fill="#c7d2fe"/><rect x="12" y="24" width="10" height="10" rx="1" fill="#a5b4fc"/><rect x="24" y="24" width="10" height="10" rx="1" fill="#c7d2fe"/>
+    </g>
+    <text x="230" y="104" fill="#312e81" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Convolution</text>
+    <text x="230" y="119" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Learned filters</text>
+  </g>
+  <!-- Activation and pooling -->
+  <g>
+    <rect x="306" y="39" width="128" height="106" rx="13" fill="#f5f3ff" stroke="#ddd6fe"/>
+    <path d="M306 52 Q306 39 319 39 H421 Q434 39 434 52" stroke="#8b5cf6" stroke-width="3" fill="none"/>
+    <g transform="translate(347 56)" stroke="#a78bfa" stroke-width="1">
+      <rect width="12" height="12" rx="2" fill="#ddd6fe"/><rect x="15" width="12" height="12" rx="2" fill="#c4b5fd"/>
+      <rect y="15" width="12" height="12" rx="2" fill="#a78bfa"/><rect x="15" y="15" width="12" height="12" rx="2" fill="#ede9fe"/>
+    </g>
+    <path d="M382 68 H393 M389 64 L393 68 L389 72" fill="none" stroke="#8b5cf6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="370" y="104" fill="#5b21b6" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Activation + Pool</text>
+    <text x="370" y="119" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Feature maps</text>
+  </g>
+  <!-- Dense layers -->
+  <g>
+    <rect x="446" y="39" width="128" height="106" rx="13" fill="#ecfeff" stroke="#a5f3fc"/>
+    <path d="M446 52 Q446 39 459 39 H561 Q574 39 574 52" stroke="#0891b2" stroke-width="3" fill="none"/>
+    <g stroke="#67e8f9" stroke-width="1.2">
+      <path d="M480 62 L504 56 M480 62 L504 72 M480 62 L504 88 M480 76 L504 56 M480 76 L504 72 M480 76 L504 88 M480 90 L504 56 M480 90 L504 72 M480 90 L504 88"/>
+      <path d="M504 56 L528 66 M504 72 L528 66 M504 88 L528 66 M504 56 L528 83 M504 72 L528 83 M504 88 L528 83" stroke="#0891b2"/>
+    </g>
+    <g fill="#0891b2"><circle cx="480" cy="62" r="3.5"/><circle cx="480" cy="76" r="3.5"/><circle cx="480" cy="90" r="3.5"/><circle cx="504" cy="56" r="3.5"/><circle cx="504" cy="72" r="3.5"/><circle cx="504" cy="88" r="3.5"/><circle cx="528" cy="66" r="3.5"/><circle cx="528" cy="83" r="3.5"/></g>
+    <text x="510" y="110" fill="#155e75" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Dense layers</text>
+    <text x="510" y="124" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Learn features</text>
+  </g>
+  <!-- Prediction -->
+  <g>
+    <rect x="586" y="39" width="128" height="106" rx="13" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <path d="M586 52 Q586 39 599 39 H701 Q714 39 714 52" stroke="#16a34a" stroke-width="3" fill="none"/>
+    <path d="M615 89 V70 M625 89 V60 M635 89 V77 M645 89 V65" stroke="#86efac" stroke-width="5" stroke-linecap="round"/>
+    <path d="M610 91 H652" stroke="#16a34a" stroke-width="1.3"/>
+    <text x="650" y="108" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Prediction</text>
+    <text x="650" y="122" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Class scores</text>
+  </g>
+  <!-- Loss -->
+  <g>
+    <rect x="726" y="39" width="128" height="106" rx="13" fill="#fff7ed" stroke="#fed7aa"/>
+    <path d="M726 52 Q726 39 739 39 H841 Q854 39 854 52" stroke="#ea580c" stroke-width="3" fill="none"/>
+    <path d="M754 56 V91 H790" stroke="#fdba74" stroke-width="1.3" fill="none"/>
+    <path d="M757 61 C764 62 769 67 773 74 S783 87 789 88" stroke="#ea580c" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+    <text x="790" y="108" fill="#9a3412" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Loss</text>
+    <text x="790" y="122" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Measure error</text>
+  </g>
+  <!-- Backpropagation -->
+  <g>
+    <rect x="866" y="39" width="128" height="106" rx="13" fill="#fff1f2" stroke="#fecdd3"/>
+    <path d="M866 52 Q866 39 879 39 H981 Q994 39 994 52" stroke="#e11d48" stroke-width="3" fill="none"/>
+    <g stroke="#fb7185" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M958 61 H938 M943 56 L938 61 L943 66"/>
+      <path d="M932 76 H912 M917 71 L912 76 L917 81"/>
+      <path d="M906 91 H886 M891 86 L886 91 L891 96"/>
+    </g>
+    <text x="930" y="111" fill="#9f1239" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">Backprop</text>
+    <text x="930" y="124" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Compute gradients</text>
+  </g>
+  <!-- SGD -->
+  <g>
+    <rect x="1006" y="39" width="128" height="106" rx="13" fill="#f0fdfa" stroke="#99f6e4"/>
+    <path d="M1006 52 Q1006 39 1019 39 H1121 Q1134 39 1134 52" stroke="#0d9488" stroke-width="3" fill="none"/>
+    <g stroke="#5eead4" stroke-width="2" stroke-linecap="round">
+      <path d="M1038 60 H1102 M1038 73 H1102 M1038 86 H1102"/>
+    </g>
+    <g fill="#0f766e" stroke="#ffffff" stroke-width="1.3">
+      <circle cx="1055" cy="60" r="4.5"/><circle cx="1085" cy="73" r="4.5"/><circle cx="1068" cy="86" r="4.5"/>
+    </g>
+    <text x="1070" y="110" fill="#115e59" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" text-anchor="middle">SGD update</text>
+    <text x="1070" y="124" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="10.5" text-anchor="middle">Adjust weights</text>
+  </g>
+  <!-- Training feedback loop -->
+  <path d="M1070 145 V174 Q1070 184 1060 184 H240 Q230 184 230 174 V151" fill="none" stroke="#159a78" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#loopArrow)"/>
+  <rect x="411" y="175" width="420" height="20" rx="10" fill="#f8fafc"/>
+  <text x="621" y="189" fill="#15816a" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">Updated weights feed the next pass</text>
+</svg>
