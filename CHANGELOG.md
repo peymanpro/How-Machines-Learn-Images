@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0 — Release-ready
+## 1.0.0 — Initial stable release
 
 ### Added
 

@@ -1,5 +1,8 @@
 # How Machines Learn Images
 
+[![Quality](https://github.com/peymanpro/How-Machines-Learn-Images/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/peymanpro/How-Machines-Learn-Images/actions/workflows/quality.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 A from-scratch, NumPy-based path from image pixels to a trainable convolutional neural network.
 
 The project is designed to answer one question:
@@ -162,3 +165,7 @@ The project follows a few strict rules:
 - document limitations instead of presenting toy results as production benchmarks
 
 This repository is an educational implementation, not a performance-optimized deep-learning library.
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
